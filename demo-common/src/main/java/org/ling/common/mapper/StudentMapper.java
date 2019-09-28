@@ -1,13 +1,12 @@
-package org.ling.cache.mapper;
+package org.ling.common.mapper;
 
 import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.ling.cache.bean.Student;
+import org.ling.common.bean.Student;
 import org.springframework.stereotype.Component;
 
-@Mapper
 @Component
 public interface StudentMapper {
     @Select("select * from student where id = #{id}")
@@ -18,4 +17,7 @@ public interface StudentMapper {
 
     @Delete("delete from student where id = #{id}")
     void delStudent(Integer id);
+
+    @Insert("insert into student(id,name,gender,age) values(#{id},#{name},#{gender},#{age})")
+    void insertStudent(Student student);
 }

@@ -2,8 +2,8 @@ package org.ling.cache;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.ling.cache.bean.Student;
-import org.ling.cache.service.StudentService;
+import org.ling.common.bean.Student;
+import org.ling.common.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;

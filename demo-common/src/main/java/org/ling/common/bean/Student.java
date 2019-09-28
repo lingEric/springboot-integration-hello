@@ -1,4 +1,4 @@
-package org.ling.cache.bean;
+package org.ling.common.bean;
 
 import java.io.Serializable;
 

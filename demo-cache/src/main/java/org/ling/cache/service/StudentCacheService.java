@@ -1,7 +1,7 @@
 package org.ling.cache.service;
 
-import org.ling.cache.bean.Student;
-import org.ling.cache.mapper.StudentMapper;
+import org.ling.common.bean.Student;
+import org.ling.common.mapper.StudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @CacheConfig(cacheNames = "student")
-public class StudentService {
+public class StudentCacheService {
     @Autowired
     private StudentMapper studentMapper;
 
@@ -30,7 +30,12 @@ public class StudentService {
 
     @CacheEvict
     public void deleteStudent(Integer id) {
-        System.out.println("删除数据库中的学生："+id);
+        System.out.println("删除数据库中的学生：" + id);
         studentMapper.delStudent(id);
+    }
+
+    public void insertStudent(Student student) {
+        System.out.println("插入学生：" + student + "到数据库中");
+        studentMapper.insertStudent(student);
     }
 }
